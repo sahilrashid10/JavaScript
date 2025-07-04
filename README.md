@@ -71,11 +71,6 @@ A combined Stopwatch ⏱ and Countdown Timer ⏳ app with toggleable modes.
 - Responsive layout and GIF background
 - Uses `setInterval`, `clearInterval`, and time formatting
 
-#### 🖼️ Previews:
-
-| Light Mode         | Dark Mode          | Timer Running         |
-|--------------------|--------------------|------------------------|
-| ![Light Mode](./StopWatch/image1.png) | ![Dark Mode](./StopWatch/image2.png) | ![Timer Running](./StopWatch/image3.png) |
 
 ---
 
