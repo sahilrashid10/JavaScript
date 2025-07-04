@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Accordion</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: url('./woods.jpg') no-repeat center center/cover;
+      font-family: sans-serif;
+    }
+
+    .accordion {
+      border: 2px solid rgb(170, 255, 0);
+      width: 40%;
+      padding: 10px;
+      background-color: rgba(23, 47, 0, 0.61);
+      color: whitesmoke;
+      border-radius: 10px;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    .content {
+      padding: 10px 0;
+      border-bottom: 1px solid rgb(238, 238, 238);
+    }
+
+    .question {
+      cursor: pointer;
+      position: relative;
+      padding: 10px;
+      font-size: 18px;
+    }
+
+    .question::after {
+      content: '+';
+      position: absolute;
+      right: 10px;
+      font-size: 1.5rem;
+      transition: transform 0.3s ease;
+    }
+
+    .content.active .question::after {
+      content: '–';
+    }
+
+    .answer {
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.3s ease;
+      padding: 0 10px;
+      line-height: 1.5;
+      font-size: 16px;
+    }
+
+    .content.active .answer {
+      max-height: 200px;
+      padding-top: 10px;
+    }
+    .content.active .question{
+        font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="accordion">
+    <h2 class="title">Frequently Asked Questions</h2>
+
+    <div class="content">
+      <div class="question">What is an accordion component?</div>
+      <div class="answer">An accordion is a UI element that allows users to expand and collapse sections of related content.</div>
+    </div>
+
+    <div class="content">
+      <div class="question">How do I use this FAQ section?</div>
+      <div class="answer">Click on a question to reveal the answer. Click again to hide it.</div>
+    </div>
+
+    <div class="content">
+      <div class="question">Can I customize the accordion?</div>
+      <div class="answer">Yes, you can change the styles and add more questions or answers as needed.</div>
+    </div>
+  </div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SR7 Quote_Generator</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            background: linear-gradient(to bottom, rgb(43, 1, 83), rgb(143, 5, 92));
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            /* border: 2px solid rgb(194, 190, 181); */
+            
+        }
+        .quote-box{
+            background-color: rgb(194, 190, 181);
+            color: black;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 500px;
+            min-height: 150PX;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+        .new-box{
+           
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .btn{
+            background-color: rgb(5, 3, 3);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.2s;
+            }
+
+            .btn:hover {
+                background-color: rgb(255, 255, 255);
+                color: black;
+        }
+        .quote{
+            font-family: Times New Roman, serif;
+            margin-bottom: 10px;
+        }
+        .author{
+            font-weight: bold;
+            margin: 15px 5px 0;
+            font-style: italic;
+            font-size: 0.9rem;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2 class="title">SR7 Quote Generator</h2>
+        <div class="quote-box">
+            <p class="quote"> "The future belongs to those who believe in the beauty of their dreams."</p>
+
+            <div class="new-box">
+                <p class="author">Eleanor Roosevelt</p>
+                <button class="btn">New Quote</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

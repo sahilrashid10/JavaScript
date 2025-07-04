@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            border: 2px solid black;
+            height: 100vh;
+            width: 100vw;
+            position: relative;
+            background: linear-gradient(135deg, #74ebd5 0%, #ACB6E5 100%);
+            background: linear-gradient();
+        }
+
+        .btn {
+            padding: 10px 20px;
+            background-color: #021e32;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.2s;
+            position: absolute;
+            bottom: 60px;
+            left: 40px;
+        }
+
+        .btn:hover {
+            background-color: #ffffff;
+            color: black;
+        }
+
+        .model {
+            background-color: white;
+            width: 20%;
+            height: 30px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            border-radius: 4px;
+
+            animation-name: animatemodel;
+            animation-duration: 1s;
+            
+        }
+
+        .model-container{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            display: none;
+            z-index: 1000;
+        }
+
+        .cross {
+            color: black;
+            font-size: 1.6rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3;
+        }
+
+        .cross:hover {
+            color: red;
+            font-size: 2rem;
+        }
+
+        @keyframes animatemodel{
+            from{
+                top : -300px;
+                opacity: 0;
+            }
+            to{
+                top : 50%;
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <button class="btn"> Where's out model</button>
+        <div class="model-container">
+            <div class="model">
+                <p>Hi there!</p>
+                <div class="cross">&times;</div>
+            </div>
+
+        </div>
+    </div>
+    <script>
+        const btn = document.querySelector('.btn');
+        btn.addEventListener('click', () => {
+            document.querySelector('.model-container').style.display = 'block';
+        });
+        const cross = document.querySelector('.cross');
+        cross.addEventListener('click', ()=>{
+        document.querySelector('.model-container').style.display = 'none';
+        });
+        
+
+    </script>
+</body>
+
+</html>

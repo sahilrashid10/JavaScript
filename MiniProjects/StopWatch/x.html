@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Advanced Stopwatch / Timer</title>
+  <style>
+    :root {
+      --bg: white;
+      --text: black;
+      --primary: rgb(189, 19, 250);
+    }
+
+    body.dark {
+      --bg: #111;
+      --text: white;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      transition: all 0.3s ease;
+    }
+
+    .clock {
+      width: 400px;
+      padding: 20px;
+      border: 2px solid black;
+      border-radius: 20px;
+      background-color: var(--bg);
+      text-align: center;
+      position: relative;
+    }
+
+    .timer-input {
+      width: 50%;
+      padding: 5px;
+      font-size: 1rem;
+      text-align: center;
+      display: none;
+      margin: 10px auto;
+      border-radius: 5px;
+      border: 1px solid gray;
+    }
+
+    .time {
+      font-size: 3rem;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+
+    .progress-ring {
+      width: 120px;
+      height: 120px;
+      margin: 10px auto;
+      position: relative;
+    }
+
+    .progress-ring circle {
+      fill: none;
+      stroke-width: 10;
+      transform: rotate(-90deg);
+      transform-origin: 50% 50%;
+    }
+
+    .bg-ring {
+      stroke: #eee;
+    }
+
+    .fg-ring {
+      stroke: var(--primary);
+      stroke-dasharray: 377;
+      stroke-dashoffset: 377;
+      transition: stroke-dashoffset 1s linear;
+    }
+
+    .button {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 30px;
+    }
+
+    .btn {
+      width: 35px;
+      height: 35px;
+      border: none;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .btn img {
+      width: 20px;
+      height: 20px;
+      object-fit: contain;
+      cursor: pointer;
+    }
+
+    .start { background-color: green; }
+    .pause { background-color: orange; display: none; }
+    .reset { background-color: red; }
+
+    .mode-select, .dark-toggle {
+      margin-top: 15px;
+    }
+
+    .lap-list {
+      margin-top: 15px;
+      max-height: 100px;
+      overflow-y: auto;
+      font-size: 0.9rem;
+    }
+
+    .lap-list li {
+      list-style: none;
+      padding: 4px;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .dark-toggle {
+      cursor: pointer;
+      margin-top: 10px;
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="clock">
+    <div class="progress-ring">
+      <svg width="120" height="120">
+        <circle class="bg-ring" cx="60" cy="60" r="60"></circle>
+        <circle class="fg-ring" cx="60" cy="60" r="60"></circle>
+      </svg>
+    </div>
+
+    <input type="number" class="timer-input" placeholder="Enter minutes" min="1" step="1"/>
+    <p class="time">00:00:00</p>
+
+    <div class="button">
+      <button class="btn start"><img src="https://img.icons8.com/ios-filled/50/ffffff/play.png"/></button>
+      <button class="btn pause"><img src="https://img.icons8.com/ios-filled/50/ffffff/pause.png"/></button>
+      <button class="btn reset"><img src="https://img.icons8.com/ios-filled/50/ffffff/restart.png"/></button>
+    </div>
+
+    <div class="mode-select">
+      <label for="modeSelect">Mode:</label>
+      <select id="modeSelect">
+        <option value="stopwatch">Stopwatch</option>
+        <option value="timer">Timer</option>
+      </select>
+    </div>
+
+    <div class="dark-toggle">🌙 Toggle Dark Mode</div>
+    <ul class="lap-list"></ul>
+  </div>
+
+  <script src="x.js"></script>
+</body>
+</html>
