@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strings</title>
+    //strings are immutable in js
+</head>
+
+<body>
+    <script>
+        // Q1 - What will the following print?
+        console.log("har".length);  // Output: 3
+
+        // Q2 - Explore includes, startsWith & endsWith
+        let sample = "JavaScript is fun";
+
+        console.log(sample.includes("is"));        // true
+        console.log(sample.startsWith("Java"));    // true
+        console.log(sample.endsWith("fun"));       // true
+
+        // Q3 - Convert a given string to lowercase
+        let upper = "HELLO WORLD";
+        let lower = upper.toLowerCase();
+        console.log(lower);  // Output: "hello world"
+
+        // Q4 - Extract the amount from the string
+        let msg = "Please give Rs 1000";
+        let amount = msg.slice(15);  
+        console.log(amount);         // Output: "1000"
+
+        // Q5 - Try to change 4th character of a string
+        let str = "hello";
+        str[3] = 'z';       // This will NOT work — strings are immutable in JS
+        console.log(str);   // Output: "hello" (unchanged)
+
+        let newStr = str.slice(0, 3) + 'z' + str.slice(4);
+        console.log(newStr); // Output: "helzo"
+
+    </script>
+</body>
+
+</html>

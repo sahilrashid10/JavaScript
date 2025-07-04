@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expressions and Conditions</title>
+</head>
+
+<body>
+    <script>
+        // Q1
+        let age = 15;
+        if (age >= 10 && age <= 20) {
+            console.log("Age is between 10 and 20");
+        } else {
+            console.log("Age is NOT between 10 and 20");
+        }
+
+        // Q2
+        let day = "Wednesday";
+        switch (day) {
+            case "Monday":
+                console.log("Start of the week");
+                break;
+            case "Wednesday":
+                console.log("Midweek day");
+                break;
+            case "Friday":
+                console.log("End of the work week");
+                break;
+            default:
+                console.log("It's just another day");
+        }
+
+        // Q3
+        let number1 = 12;
+        if (number1 % 2 === 0 && number1 % 3 === 0) {
+            console.log("Number is divisible by both 2 and 3");
+        } else {
+            console.log("Number is NOT divisible by both 2 and 3");
+        }
+
+        // Q4
+        let number2 = 14;
+        if (number2 % 2 === 0 || number2 % 3 === 0) {
+            console.log("Number is divisible by 2 or 3");
+        } else {
+            console.log("Number is NOT divisible by 2 or 3");
+        }
+
+        // Q5
+        let drivingAge = 17;
+        let message = (drivingAge > 18) ? "You can Drive" : "You cannot Drive";
+        console.log(message);
+
+    </script>
+</body>
+
+</html>

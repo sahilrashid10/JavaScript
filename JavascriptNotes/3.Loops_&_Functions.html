@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops and Fnctions</title>
+</head>
+
+<body>
+    <script>
+        // Q1: Print marks using for loop
+        let marks = {
+            harry: 98,
+            rohan: 70,
+            aakash: 77
+        };
+
+        let keys = Object.keys(marks);
+        for (let i = 0; i < keys.length; i++) {
+            console.log(`${keys[i]}: ${marks[keys[i]]}`);
+        }
+
+        // Q2: Print marks using for...in loop
+        for (let student in marks) {
+            console.log(`${student}: ${marks[student]}`);
+        }
+
+        // Q3: Keep asking user to enter correct number
+        // Let's say the correct number is 42
+        let correctNumber = 42;
+        let userInput;
+
+        do {
+            userInput = parseInt(prompt("Enter the correct number:"));
+        } while (userInput !== correctNumber);
+
+        console.log("You entered the correct number!");
+
+        // Q4: Function to find mean of 5 numbers
+        function mean(a, b, c, d, e) {
+            return (a + b + c + d + e) / 5;
+        }
+
+        console.log("Mean is:", mean(10, 20, 30, 40, 50));  // Example call
+
+    </script>
+
+</body>
+
+</html>

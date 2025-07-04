@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        //1,2  a number added to a string will be converted to a string
+        // and the result will be a string
+
+        let num = "5";
+        let result = 10 + num;
+        console.log(result);
+        console.log(typeof result ); 
+        //3, 4 making object const doesn't make it immutable
+        // you can change the properties of the object but you can't reassign it
+        const obj = {
+            name: "Sahil",
+            age: 25
+        };
+        obj.name  = 2;
+        obj.hobbies = ["reading", "gaming"];
+        console.log(obj.name)
+        console.log(obj)
+
+        //5 Dictionary example
+             const dictionary = {
+            "serene": "calm, peaceful, and untroubled",
+            "elated": "very happy or proud; jubilant",
+            "diligent": "showing care and effort in your work or duties",
+            "vivid": "producing powerful feelings or strong, clear images in the mind",
+            "benevolent": "well meaning and kindly"
+        };
+
+        while(1){
+            let word = prompt("Enter a word:");
+            let meaning = dictionary[word];
+            alert(meaning);
+        }
+        
+    </script>
+    
+</body>
+</html>

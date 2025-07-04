@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+    //Arrays are mutable in JS
+    //You can change the elements of an array, but you cannot reassign it to a new array, like in objects.
+
+    /*
+    **imp: in js, typeof array is "object"**
+    **imp: map, filter, concat -> return new arrays, reduce produces a single value**
+    **imp: push, pop, shift, unshift -> modify the original array**
+    **imp: slice -> doesn't include last index**
+    eg:
+    fruits = ["apple", "banana", "orange"];
+    fruits = ["kiwi", "mango"]; This will throw an error*/
+</head>
+
+<body>
+    <script>
+        // Q1: Use map() to multiply each number by 2
+        let numbers = [1, 2, 3, 4, 5];
+        let doubled = numbers.map(num => num * 2);
+        console.log("Q1 - map:", doubled); // [2, 4, 6, 8, 10]
+
+        // Q2: Use filter() to get even numbers
+        let evens = numbers.filter(num => num % 2 === 0);
+        console.log("Q2 - filter:", evens); // [2, 4]
+
+        // Q3: Use reduce() to sum all elements
+        let sum = numbers.reduce((acc, curr) => acc + curr, 0);
+        console.log("Q3 - reduce:", sum); // 15
+
+        // Q4: Use push() to add an element at the end
+        let fruits = ["apple", "banana"];
+        fruits.push("mango");
+        console.log("Q4 - push:", fruits); // ["apple", "banana", "mango"]
+
+        // Q5: Use pop() to remove the last element
+        let last = fruits.pop();
+        console.log("Q5 - pop:", last); // "mango"
+        console.log("Updated fruits:", fruits); // ["apple", "banana"]
+
+        // Q6: Use concat() to join two arrays
+        let nums1 = [1, 2];
+        let nums2 = [3, 4];
+        let combined = nums1.concat(nums2);
+        console.log("Q6 - concat:", combined); // [1, 2, 3, 4]
+
+        // Q7: Use shift() to remove the first element
+        let shifted = combined.shift();
+        console.log("Q7 - shift:", shifted); // 1
+        console.log("After shift:", combined); // [2, 3, 4]
+
+        // Q8: Use join() to create a string
+        let words = ["Hello", "World"];
+        let sentence = words.join(" ");
+        console.log("Q8 - join:", sentence); // "Hello World"
+
+        // Q9: Use slice() to extract part of an array
+        let sliced = numbers.slice(1, 4);
+        console.log("Q9 - slice:", sliced); // [2, 3, 4]
+
+        // Q10: Use all three (map, filter, reduce) together
+        let complex = numbers
+            .map(n => n * 3)
+            .filter(n => n > 5)
+            .reduce((a, b) => a + b, 0);
+        console.log("Q10 - map+filter+reduce:", complex); // (6+9+12+15) = 42
+
+    </script>
+
+</body>
+
+</html>
